@@ -1,0 +1,90 @@
+.container {
+  width: 100rem;
+  display: flex;
+  margin: auto;
+}
+.header__ {
+
+  &wrapper {
+    width: 100%;
+    height: 50.6250rem;
+    background-image: url("/img/bg.png");
+    &-nav {
+      width: 100%;
+      height: 6.25rem;
+      padding-left: 14rem;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: row;
+      &-item {
+        font-family: Proxima Nova, sans-serif;
+        gap: 1.75rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 31.2500rem;
+        &-links {
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 18px;
+          color: #FFFFFF;
+          text-decoration: none;
+          padding: 0rem 0.25rem 0.5rem 0.25rem;
+          &:hover {
+            border-bottom: 3px solid #FF8B00;
+          }
+        }
+      }
+      &-logo {
+        width: 4.8750rem;
+        height: 6.25rem;
+      }
+    }
+    &-info {
+      display: flex;
+      flex-direction: row;
+
+      color: #FFFFFF;
+      font-family: Proxima Nova, sans-serif;
+      margin-left: 19.1250rem;
+      margin-top: 8.0625rem;
+      &-box {
+        display: flex;
+        flex-direction: column;
+        width: 34.5rem;
+        &-title {
+          font-size: 55px;
+          font-weight: 700;
+          line-height: 55px;
+        }
+        &-text {
+          margin-top: 0.75rem;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 30px;
+        }
+        &-btn {
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 45px;
+          color: #FFFFFF;
+
+          margin-top: 2.75rem;
+          width: 10.8750rem;
+          height: 3.3125rem;
+          border-radius: 4px;
+          background-color: #FF8B00;
+          padding: 0.25rem 2.5938rem 0.25rem 2.5938rem;
+        }
+      }
+      &-icon {
+        width: 9.4375rem;
+        height: 7.75rem;
+        margin-left: 13.7500rem;
+      }
+    }
+
+  }
+
+
+}
