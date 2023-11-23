@@ -6,9 +6,11 @@
 .header__ {
 
   &wrapper {
+    color: #FFFFFF;
     width: 100%;
     height: 50.6250rem;
     background-image: url("/img/bg.png");
+
     &-nav {
       width: 100%;
       height: 6.25rem;
@@ -44,20 +46,21 @@
       display: flex;
       flex-direction: row;
 
-      color: #FFFFFF;
       font-family: Proxima Nova, sans-serif;
       margin-left: 19.1250rem;
       margin-top: 8.0625rem;
       &-box {
         display: flex;
         flex-direction: column;
-        width: 34.5rem;
+        width: 36.5rem;
         &-title {
+
           font-size: 55px;
           font-weight: 700;
           line-height: 55px;
         }
         &-text {
+          //width: 33.25rem;
           margin-top: 0.75rem;
           font-size: 16px;
           font-weight: 600;
@@ -74,16 +77,66 @@
           height: 3.3125rem;
           border-radius: 4px;
           background-color: #FF8B00;
-          padding: 0.25rem 2.5938rem 0.25rem 2.5938rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
         }
       }
       &-icon {
         width: 9.4375rem;
         height: 7.75rem;
         margin-left: 13.7500rem;
+
+        display: flex;
+        align-self: center;
       }
     }
+    &-scroll {
+      font-family: Proxima Nova, sans-serif;
 
+      margin-top: 8.4375rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &-icon {
+        margin-top: 1.1875rem;
+        width: 3.8750rem;
+        height: 4.4375rem;
+        cursor: pointer;
+      }
+      &-text {
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 20px;
+      }
+    }
+    &-box {
+      padding-bottom: 8.1875rem;
+      font-family: Proxima Nova, sans-serif;
+      color: #7050E5;
+      gap: 5.75rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      text-align: center;
+      &-info {
+        margin-top: 8.3125rem;
+        &-num {
+          font-size: 60px;
+          font-weight: 700;
+          line-height: 68px;
+        }
+        &-text {
+          text-transform: uppercase;
+          margin-top: 0.8750rem;
+
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 18px;
+        }
+      }
+    }
   }
 
 

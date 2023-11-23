@@ -303,9 +303,18 @@ template {
 [hidden] {
   display: none; }
 
+@font-face {
+  font-family: "Proxima Nova-bold";
+  src: url("/src/fonts/proxima_nova/proximanova_bold.otf") format("truetype");
+  font-weight: 900; }
 h1, h2, h3, h4, h5, h6, ul {
   margin: 0;
   padding: 0; }
+
+.header__container {
+  width: 100rem;
+  display: flex;
+  margin: auto; }
 
 .container {
   width: 100rem;
@@ -313,6 +322,7 @@ h1, h2, h3, h4, h5, h6, ul {
   margin: auto; }
 
 .header__wrapper {
+  color: #FFFFFF;
   width: 100%;
   height: 50.6250rem;
   background-image: url("/img/bg.png"); }
@@ -345,14 +355,13 @@ h1, h2, h3, h4, h5, h6, ul {
   .header__wrapper-info {
     display: flex;
     flex-direction: row;
-    color: #FFFFFF;
     font-family: Proxima Nova, sans-serif;
     margin-left: 19.1250rem;
     margin-top: 8.0625rem; }
     .header__wrapper-info-box {
       display: flex;
       flex-direction: column;
-      width: 34.5rem; }
+      width: 36.5rem; }
       .header__wrapper-info-box-title {
         font-size: 55px;
         font-weight: 700;
@@ -372,10 +381,51 @@ h1, h2, h3, h4, h5, h6, ul {
         height: 3.3125rem;
         border-radius: 4px;
         background-color: #FF8B00;
-        padding: 0.25rem 2.5938rem 0.25rem 2.5938rem; }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer; }
     .header__wrapper-info-icon {
       width: 9.4375rem;
       height: 7.75rem;
-      margin-left: 13.7500rem; }
+      margin-left: 13.7500rem;
+      display: flex;
+      align-self: center; }
+  .header__wrapper-scroll {
+    font-family: Proxima Nova, sans-serif;
+    margin-top: 8.4375rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .header__wrapper-scroll-icon {
+      margin-top: 1.1875rem;
+      width: 3.8750rem;
+      height: 4.4375rem;
+      cursor: pointer; }
+    .header__wrapper-scroll-text {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 20px; }
+  .header__wrapper-box {
+    padding-bottom: 8.1875rem;
+    font-family: Proxima Nova, sans-serif;
+    color: #7050E5;
+    gap: 5.75rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center; }
+    .header__wrapper-box-info {
+      margin-top: 8.3125rem; }
+      .header__wrapper-box-info-num {
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 68px; }
+      .header__wrapper-box-info-text {
+        text-transform: uppercase;
+        margin-top: 0.8750rem;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 18px; }
 
 /*# sourceMappingURL=main.css.map */
