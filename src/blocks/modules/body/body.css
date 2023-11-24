@@ -120,17 +120,19 @@
         width: 45.2500rem;
         height: 27.7500rem; }
 .body__form {
-  background: #020024;
-  background: linear-gradient(90deg, #020024 0%, #1f1247 35%, #00d4ff 100%);
+  background-color: #232323;
+  position: relative;
   font-family: Proxima Nova, sans-serif; }
   .body__form-wrapper {
+    position: relative;
     display: flex;
     flex-direction: row;
     margin-top: 7.5rem;
     margin-bottom: 7.5rem; }
     .body__form-wrapper-title {
+      z-index: 9999;
       margin-left: 12.5rem;
-      font-size: 55px;
+      font-size: clamp(34px, 5vw, 55px);
       font-weight: 700;
       line-height: 55px;
       color: #FFFFFF; }
@@ -216,5 +218,22 @@
         display: flex;
         align-items: center;
         justify-content: center; }
+
+.startedForm {
+  z-index: 99; }
+
+.gradient-top {
+  width: 46.6250rem;
+  height: 47.3125rem;
+  position: absolute; }
+.gradient-bottom {
+  width: 29.5rem;
+  height: 29.8750rem;
+  position: absolute;
+  top: 119px;
+  left: 55.5625rem; }
+
+html {
+  scroll-behavior: smooth; }
 
 /*# sourceMappingURL=body.css.map */

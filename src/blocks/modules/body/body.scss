@@ -156,20 +156,24 @@
     }
   }
   &form {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(31,18,71,1) 35%, rgba(0,212,255,1) 100%);
+    background-color: #232323;
+    position: relative;
 
     font-family: Proxima Nova, sans-serif;
     &-wrapper {
+      position: relative;
+
       display: flex;
       flex-direction: row;
 
       margin-top: 7.5rem;
       margin-bottom: 7.5rem;
       &-title {
+        z-index: 9999;
+
         margin-left: 12.5rem;
 
-        font-size: 55px;
+        font-size: clamp(34px, 5vw, 55px);
         font-weight: 700;
         line-height: 55px;
         color: #FFFFFF;
@@ -288,5 +292,29 @@
     }
 
   }
+}
+.startedForm {
+  z-index: 99;
+}
+
+.gradient {
+  &-top {
+    //background: url("/img/radiant-top.png") no-repeat;
+    width: 46.6250rem;
+    height: 47.3125rem;
+    position: absolute;
+  }
+  &-bottom {
+    width: 29.5rem;
+    height: 29.8750rem;
+    position: absolute;
+
+    top: 119px;
+    left: 55.5625rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
