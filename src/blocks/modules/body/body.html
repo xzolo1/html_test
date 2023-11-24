@@ -99,22 +99,58 @@
     </section>
 </div>
 
-<div class="container">
-    <section class="body__info">
-        <div class="body__info-wrapper">
-            <div class="body__info-wrapper-desc">
-                <div class="body__info-wrapper-desc-title">Product Spotlight</div>
-                <div class="body__info-wrapper-desc-text">
-                    Salt mSign Connected Token is a contemporary mobile security 2FA token for authentication of user
-                    identity and verification of transactions independent of the delivery channel that initiated the request.
-                </div>
-                <div class="body__info-wrapper-desc-btn">more info</div>
+
+<section class="body__info container">
+    <div class="body__info-wrapper">
+        <div class="body__info-wrapper-desc">
+            <div class="body__info-wrapper-desc-title">Product Spotlight</div>
+            <div class="body__info-wrapper-desc-text">
+                Salt mSign Connected Token is a contemporary mobile security 2FA token for authentication of user
+                identity and verification of transactions independent of the delivery channel that initiated the request.
             </div>
-            <div class="body__info-wrapper-desc">
-                <div class="body__info-wrapper-desc-video">
+            <div class="body__info-wrapper-desc-btn">more info</div>
+        </div>
+        <div class="body__info-wrapper-desc">
+                <iframe class="body__info-wrapper-desc-video" src="https://www.youtube.com/embed/hNNhazRSDrM?si=izjGBM4Pk4DmPD6o"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                </iframe>
+            </div>
+    </div>
+</section>
+
+<section class="body__form container">
+    <div class="body__form-wrapper">
+        <div class="body__form-wrapper-title">Ready</br> to get started?</div>
+        <form class="startedForm">
+            <div class="body__form-wrapper-contact">
+                <span class="body__form-wrapper-contact-title">Contact us</span>
+                <div class="body__form-wrapper-contact-chest">
+                    <div class="body__form-wrapper-contact-chest-box">
+                        <span class="body__form-wrapper-contact-chest-box-text">First Name</span>
+                        <input name="firstname" type="text" class="body__form-wrapper-contact-chest-box-input form-fname form-control" placeholder="First Name" minlength="4">
+                    </div>
+                    <div class="body__form-wrapper-contact-chest-box">
+                        <span class="body__form-wrapper-contact-chest-box-text">Last Name</span>
+                        <input name="lastname" type="text" class="body__form-wrapper-contact-chest-box-input form-lname form-control" placeholder="First Name" minlength="4">
+                    </div>
 
                 </div>
+                <div class="body__form-wrapper-contact-addr">
+                    <span class="body__form-wrapper-contact-addr-text">Email Address</span>
+                    <input name="mail" type="text" class="body__form-wrapper-contact-addr-input form-mail form-control" placeholder="Email Address" />
+                </div>
+                <div class="body__form-wrapper-contact-mail">
+                    <span class="body__form-wrapper-contact-mail-text">Your Message</span>
+                    <textarea id="text" type="text" class="body__form-wrapper-contact-mail-input form-mes" placeholder="Your Message"></textarea>
+                </div>
+                <!--<button id="form-started" type="button" class="body__form-wrapper-contact-btn" type="submit">SEND</button>-->
+                <input type='submit' class='body__form-wrapper-contact-btn validateBtn' value='SEND'/>
+
             </div>
-        </div>
-    </section>
-</div>
+        </form>
+
+    </div>
+</section>
