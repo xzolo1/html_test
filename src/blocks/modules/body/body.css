@@ -3,43 +3,113 @@
   padding-bottom: 7.5rem;
   padding-top: 9.0625rem;
   font-family: Proxima Nova, sans-serif; }
-.body__wrapper-line {
-  display: flex;
-  justify-content: end;
-  margin-right: 18.5625rem; }
-.body__wrapper-desc {
-  margin-left: 19rem;
-  margin-right: 19rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; }
-  .body__wrapper-desc-item {
-    display: flex;
-    flex-direction: column;
-    width: 16.9375rem;
+.body__wrapper {
+  position: relative;
+  width: 100rem; }
+  .body__wrapper-line {
+    position: absolute;
+    width: 100%;
+    text-align: end;
+    left: -18.5625rem;
+    top: -33px; }
+  .body__wrapper-desc {
+    /*margin-left: 19rem;
+    margin-right: 19rem;*/
+    /*display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;*/
+    display: grid;
+    grid-template-columns: 271px 241px 281px;
+    gap: 100px;
+    justify-content: center;
     margin-top: 4.3750rem; }
-    .body__wrapper-desc-item-img {
-      width: 150px;
-      height: 150px; }
-    .body__wrapper-desc-item-title {
-      margin-top: 1.75rem;
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #7050E5;
-      text-transform: uppercase; }
-    .body__wrapper-desc-item-text {
-      margin-top: 0.5rem;
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 19px;
-      color: #878787; }
-.body__wrapper-title {
-  font-size: 60px;
-  font-weight: 700;
-  line-height: 72px;
-  color: #7050E5;
-  text-align: end;
-  margin-right: 22.6250rem; }
+    .body__wrapper-desc-item {
+      display: flex;
+      flex-direction: column;
+      /*width: 16.9375rem;*/ }
+      .body__wrapper-desc-item-img {
+        height: 150px; }
+        .body__wrapper-desc-item-img-device {
+          width: 142px;
+          height: 146px;
+          margin-left: 39px; }
+        .body__wrapper-desc-item-img-user {
+          width: 160px;
+          height: 150px;
+          margin-left: 40px; }
+        .body__wrapper-desc-item-img-transaction {
+          width: 150px;
+          height: 150px;
+          margin-left: 57px; }
+        .body__wrapper-desc-item-img-methods {
+          width: 132px;
+          height: 139px;
+          margin-left: 56px; }
+        .body__wrapper-desc-item-img-hsm {
+          width: 191px;
+          height: 127px;
+          margin-left: 37px; }
+        .body__wrapper-desc-item-img-security {
+          width: 210px;
+          height: 108px;
+          margin-left: 29px; }
+      .body__wrapper-desc-item-title {
+        margin-top: 1.75rem;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 20px;
+        color: #7050E5;
+        text-transform: uppercase; }
+      .body__wrapper-desc-item-text {
+        margin-top: 0.5rem;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 19px;
+        color: #878787; }
+  .body__wrapper-title {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 72px;
+    color: #7050E5;
+    text-align: end;
+    margin-right: 22.6250rem; }
+.body__info {
+  padding-top: 7.1250rem;
+  padding-bottom: 6.0625rem;
+  font-family: Proxima Nova, sans-serif; }
+  .body__info-wrapper {
+    display: flex;
+    flex-direction: row; }
+    .body__info-wrapper-desc {
+      max-width: 28.4375rem;
+      width: 100%; }
+      .body__info-wrapper-desc-title {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 55px;
+        color: #7050E5; }
+      .body__info-wrapper-desc-text {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 21px;
+        color: #878787;
+        margin-top: 0.9375rem; }
+      .body__info-wrapper-desc-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10.6875rem;
+        height: 2.75rem;
+        border-radius: 4px;
+        color: #FFFFFF;
+        background-color: #FF8B00;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 18px;
+        text-transform: uppercase;
+        margin-top: 2.3750rem; }
+      .body__info-wrapper-desc-video {
+        width: 45.2500rem;
+        height: 27.7500rem; }
 
 /*# sourceMappingURL=body.css.map */
