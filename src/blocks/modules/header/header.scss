@@ -16,6 +16,14 @@
     float: left;
   }
 }
+.slide {
+  &-active {
+    background: url("/img/slide-active.svg");
+  }
+  &-inactive {
+    background: url("/img/slide-inactive.svg");
+  }
+}
 
 .header__ {
   &slide {

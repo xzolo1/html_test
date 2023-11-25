@@ -331,6 +331,11 @@ h1, h2, h3, h4, h5, h6, ul {
   display: inline;
   float: left; }
 
+.slide-active {
+  background: url("/img/slide-active.svg"); }
+.slide-inactive {
+  background: url("/img/slide-inactive.svg"); }
+
 .header__slide {
   width: 100%;
   margin: 0 auto;

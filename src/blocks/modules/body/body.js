@@ -49,8 +49,13 @@ document.querySelectorAll(".header__wrapper-menu-item").forEach(
         slide.addEventListener("click", function (){
             let viewWidth = document.querySelector(".header__wrapper-info");
 
-            slide.src="img/slide-unactive.svg";
+            document.querySelectorAll(".header__wrapper-menu-item").forEach(function (btnActive){
+                btnActive.classList.remove("slide-active");
+                btnActive.classList.add("slide-inactive");
+            });
 
+            slide.classList.remove("slide-inactive");
+            slide.classList.add("slide-active");
 
             if (slideNow === slideCount || slideNow <=0 || slideNow > slideCount) {
                 document.querySelector(".header__slide-viewport-wrapper").style = "transform: translate(0, 0)";
@@ -59,6 +64,7 @@ document.querySelectorAll(".header__wrapper-menu-item").forEach(
                 slideNow = slide.dataset.id - 1;
                 translateWidth = -viewWidth.offsetWidth * slideNow;
                 document.querySelector(".header__slide-viewport-wrapper").style = "transform: translate(" + translateWidth + "px, 0)";
+
                 slideNow++;
             }
         });
