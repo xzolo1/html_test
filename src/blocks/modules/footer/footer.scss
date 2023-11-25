@@ -1,5 +1,6 @@
 .footer__ {
   &box {
+    position: relative;
     width: 100%;
     &-icon {
       width: 9px;
@@ -7,7 +8,7 @@
     }
     &-text {
       font-family: Raleway, sans-serif;
-      font-size: 10px;
+      font-size: clamp(8px, 2vw, 10px);
       font-weight: 500;
       line-height: 20px;
       text-align: center;
@@ -34,6 +35,18 @@
     font-family: Proxima Nova, sans-serif;
     color: #FFFFFF;
     text-transform: uppercase;
+    &-logo {
+      width: 75px;
+      height: 86px;
+
+      position: absolute;
+      left: 93.3125rem;
+      bottom: 3.4375rem;
+      &-img {
+        width: 100%;
+        height: 100%;
+      }
+    }
     &-twitter {
       margin-left: 14rem;
     }
@@ -41,7 +54,13 @@
       display: flex;
       flex-direction: row;
       margin-left: 7.5rem;
-      gap: 8.25rem;
+      max-width: 45.8750rem;
+      width: 100%;
+      height: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      font-family: Proxima Nova, sans-serif;
       &-box {
         display: flex;
         flex-direction: column;
@@ -49,21 +68,97 @@
           display: flex;
           flex-direction: row;
           margin-bottom: 1.25rem;
+          &-icon {
+            width: 17.5px;
+            height: 20px;
+          }
           &-text {
             margin-left: 0.5rem;
             color: #FF8B00;
+
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 20px;
           }
         }
         &-links {
           color: #FFFFFF;
           text-decoration: none;
           margin-bottom: 0.5rem;
+
+          font-size: 14px;
+          font-weight: 600;
+          line-height: clamp(18px, 5vw,20px);
           &:last-child {
             margin-bottom: unset;
           }
           &:hover {
             background-color: #FF8B00;
             border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .footer__ {
+    &box {
+
+      &-icon {
+
+      }
+      &-text {
+        height: 5.9375rem;
+        opacity: 80%;
+      }
+    }
+    &container {
+      margin-top: 6.0625rem;
+    }
+    &wrapper {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 3.75rem;
+      &-twitter {
+        margin-left: unset;
+        //margin: auto;
+      }
+      &-desc {
+        justify-content: center;
+        margin-left: unset;
+        margin-top: 3.75rem;
+
+        &-box {
+          width: 6.8750rem;
+          margin-left: 3.25rem;
+          &:first-child {
+            margin-left: unset;
+          }
+          &:last-child {
+
+            margin-left: unset;
+            margin-top: 3rem;
+            width: unset;
+          }
+
+          &-title {
+            &:last-child {
+              align-self: center;
+            }
+            &-text {
+
+            }
+          }
+          &-links {
+
+            &:last-child {
+
+            }
+            &:hover {
+
+            }
           }
         }
       }

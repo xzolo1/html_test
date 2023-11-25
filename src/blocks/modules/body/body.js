@@ -32,6 +32,9 @@ form.addEventListener("submit", function () {
         if (!fields[i].value) {
             fields[i].style.color = "red";
             fields[i].value = "Required field";
+        } else {
+            alert("NICE");
+            break;
         }
     }
 });
