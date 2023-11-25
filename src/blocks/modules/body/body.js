@@ -1,4 +1,4 @@
-var form = document.querySelector(".startedForm");
+/*var form = document.querySelector(".startedForm");
 var formBtn = document.querySelector(".body__form-wrapper-contact-btn");
 var fName = form.querySelector(".form-fname");
 var lName = form.querySelector(".form-lname");
@@ -37,7 +37,30 @@ form.addEventListener("submit", function () {
             break;
         }
     }
-});
+});*/
 
 
+let slideNow = 1;
+let slideCount = document.querySelectorAll(".header__wrapper-info").length;
+let translateWidth = 0;
 
+document.querySelectorAll(".header__wrapper-menu-item").forEach(
+    function (slide) {
+        slide.addEventListener("click", function (){
+            let viewWidth = document.querySelector(".header__wrapper-info");
+
+            slide.src="img/slide-unactive.svg";
+
+
+            if (slideNow === slideCount || slideNow <=0 || slideNow > slideCount) {
+                document.querySelector(".header__slide-viewport-wrapper").style = "transform: translate(0, 0)";
+                slideNow = 1;
+            } else {
+                slideNow = slide.dataset.id - 1;
+                translateWidth = -viewWidth.offsetWidth * slideNow;
+                document.querySelector(".header__slide-viewport-wrapper").style = "transform: translate(" + translateWidth + "px, 0)";
+                slideNow++;
+            }
+        });
+    }
+);

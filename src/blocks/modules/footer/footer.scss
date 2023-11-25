@@ -110,6 +110,7 @@
 
       }
       &-text {
+        margin-top: 5rem;
         height: 5.9375rem;
         opacity: 80%;
       }
@@ -121,6 +122,10 @@
       flex-direction: column;
       align-items: center;
       margin-top: 3.75rem;
+      &-logo {
+        margin: 5rem auto 0 auto;
+        position: unset;
+      }
       &-twitter {
         margin-left: unset;
         //margin: auto;
@@ -144,9 +149,7 @@
           }
 
           &-title {
-            &:last-child {
-              align-self: center;
-            }
+
             &-text {
 
             }
