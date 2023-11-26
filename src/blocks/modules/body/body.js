@@ -6,6 +6,7 @@ var mail = form.querySelector(".form-mail");
 var message = form.querySelector(".form-mes");
 var fields  = form.getElementsByClassName("form-control");
 
+//clear form
 fName.addEventListener("click", function () {
     if (fName.value === "Required field") {
         fName.value = "";
@@ -33,13 +34,13 @@ form.addEventListener("submit", function () {
             fields[i].style.color = "red";
             fields[i].value = "Required field";
         } else {
-            alert("NICE");
+            console.log(fName.value,lName.value,mail.value,message.value);
             break;
         }
     }
 });
 
-
+//slide
 let slideNow = 1;
 let slideCount = document.querySelectorAll(".header__wrapper-info").length;
 let translateWidth = 0;
@@ -64,9 +65,31 @@ document.querySelectorAll(".header__wrapper-menu-item").forEach(
                 slideNow = slide.dataset.id - 1;
                 translateWidth = -viewWidth.offsetWidth * slideNow;
                 document.querySelector(".header__slide-viewport-wrapper").style = "transform: translate(" + translateWidth + "px, 0)";
-
+                /*document.querySelector(".header__slide-viewport-wrapper").style ="-webkit-transform: translate(" + translateWidth + "px, 0)";
+                document.querySelector(".header__slide-viewport-wrapper").style ="-ms-transform: translate(" + translateWidth + "px, 0)";*/
                 slideNow++;
             }
         });
     }
 );
+
+//modal
+var modal = document.querySelector("#myModal");
+var btn = document.querySelector(".body__info-wrapper-desc-btn");
+var btnClose = document.getElementsByClassName("close")[0];
+
+console.log(modal, btn, btnClose);
+
+btn.onclick = function() {
+    modal.style.display = "block";
+};
+
+btnClose.onclick = function() {
+    modal.style.display = "none";
+};
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
