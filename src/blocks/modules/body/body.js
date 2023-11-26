@@ -1,4 +1,4 @@
-/*var form = document.querySelector(".startedForm");
+var form = document.querySelector(".startedForm");
 var formBtn = document.querySelector(".body__form-wrapper-contact-btn");
 var fName = form.querySelector(".form-fname");
 var lName = form.querySelector(".form-lname");
@@ -29,7 +29,7 @@ form.addEventListener("submit", function () {
     event.preventDefault();
 
     for (var i = 0; i < fields.length; i++) {
-        if (!fields[i].value) {
+        if (!fields[i].value || fields[i].value === "Required field") {
             fields[i].style.color = "red";
             fields[i].value = "Required field";
         } else {
@@ -37,7 +37,7 @@ form.addEventListener("submit", function () {
             break;
         }
     }
-});*/
+});
 
 
 let slideNow = 1;
