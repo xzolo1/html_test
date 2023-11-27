@@ -1,8 +1,10 @@
+$colorOrange:#FF8B00;
+$colorWhite:#FFFFFF;
+
+:root {
+  --color-purple: #7050E5;
+}
+
 @import "modules/header/header";
 @import "modules/footer/footer";
 @import "modules/body/body";
-
-$colorWhite:#FFFFFF;
-$colorOrange:#FF8B00;
-$colorPurple:#7050E5;
-
