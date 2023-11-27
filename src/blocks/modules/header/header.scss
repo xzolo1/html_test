@@ -74,8 +74,8 @@
         width: 19px;
         height: 22px;
         margin-top: 0.75rem;
-        &:first-child {
         cursor: pointer;
+        &:first-child {
           margin-top: unset;
         }
       }
