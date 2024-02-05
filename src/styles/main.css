@@ -404,6 +404,7 @@ h1, h2, h3, h4, h5, h6, ul {
         font-weight: 700;
         line-height: 18px;
         color: #FFFFFF;
+        color: red;
         text-decoration: none;
         padding: 0rem 0.25rem 0.5rem 0.25rem; }
         .header__wrapper-nav-item-links:hover {

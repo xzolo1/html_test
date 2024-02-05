@@ -99,6 +99,7 @@
           font-weight: 700;
           line-height: 18px;
           color: $colorWhite;
+          color: red;
           text-decoration: none;
           padding: 0rem 0.25rem 0.5rem 0.25rem;
           &:hover {
@@ -276,6 +277,10 @@
 .burger-checkbox:checked ~ .mobile-header__wrapper-nav-item {
   transform: translateX(0);
 }
+
+
+
+
 
 @media (max-width: 1356px) {
   .header__ {

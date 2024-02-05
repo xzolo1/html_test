@@ -29,16 +29,17 @@ mail.addEventListener("click", function () {
 form.addEventListener("submit", function () {
     event.preventDefault();
 
-    for (var i = 0; i < fields.length; i++) {
+    for (let i = 0; i < fields.length; i++) {
         if (!fields[i].value || fields[i].value === "Required field") {
             fields[i].style.color = "red";
             fields[i].value = "Required field";
         } else {
-            console.log(fName.value,lName.value,mail.value,message.value);
             break;
         }
     }
 });
+
+
 
 //slide
 let slideNow = 1;
@@ -78,12 +79,10 @@ var modal = document.querySelector("#myModal");
 var btn = document.querySelector(".body__info-wrapper-desc-btn");
 var btnClose = document.getElementsByClassName("close")[0];
 
-console.log(modal, btn, btnClose);
 
 btn.onclick = function() {
     modal.style.display = "block";
 };
-
 btnClose.onclick = function() {
     modal.style.display = "none";
 };
@@ -93,3 +92,7 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 };
+
+
+
+
