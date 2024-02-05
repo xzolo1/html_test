@@ -3,7 +3,7 @@ const card = {
     nameCard: "credit visa gold",
     type: "VISA",
     status: "+",
-    balance: 0,
+    balance: 0д,
     cur: "RUB",
     numDep: "9199191919919191919"
 };
@@ -34,20 +34,20 @@ function createCardInfo(card) {
     const errors = validate(card, schema);
     if (errors.length > 0) {
         return ["",-1];
-    } else {
-        const digits = card.numCard.slice(-4);
-        const lastDigits = digits.substring(0,2) + " " + digits.substring(2);
-        const balance = card.balance;
-        const currency = card.cur;
-        if (card.nameCard.indexOf("credit") === -1)
-        {
-            cardInfo = ("По вашей карте " + lastDigits + " вам доступно " + balance + " " + currency);
-            return [cardInfo, 0];
-        }else {
-            cardInfo = ("По вашей кредитной карте " + lastDigits + " вам доступно " + balance + " " + currency);
-            return [cardInfo, 0];
-        }
     }
+    const digits = card.numCard.slice(-4);
+    const lastDigits = digits.substring(0,2) + " " + digits.substring(2);
+    const balance = card.balance;
+    const currency = card.cur;
+    if (card.nameCard.indexOf("credit") === -1)
+    {
+        cardInfo = ("По вашей карте " + lastDigits + " вам доступно " + balance + " " + currency);
+        return [cardInfo, 0];
+    }else {
+        cardInfo = ("По вашей кредитной карте " + lastDigits + " вам доступно " + balance + " " + currency);
+        return [cardInfo, 0];
+    }
+
 
 }
 console.log(createCardInfo(card));
