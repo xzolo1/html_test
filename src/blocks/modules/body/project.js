@@ -33,9 +33,7 @@ function createCardInfo(card) {
     const errors = validate(card, schema);
 
     if (errors.length > 0) {
-        for (const { message } of errors) {
-            return ["",-1];
-        }
+        return ["",-1];
     } else {
         const digits = card.numCard.slice(-4);
         const lastDigits = digits.substring(0,2) + " " + digits.substring(2);
