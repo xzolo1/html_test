@@ -10,24 +10,47 @@ const card = {
 
 function createCardInfo(card) {
     let cardInfo = [];
-    if (card.hasOwnProperty("numCard") && card.hasOwnProperty("nameCard") && card.hasOwnProperty("balance") && card.hasOwnProperty("cur")) {
-        if (card.numCard && typeof card.numCard === "string" && /^\d+$/.test(card.numCard) && card.numCard.length >= 4 || card.balance && /^[0-9]*[.,]?[0-9]+$/.test(card.balance) && card.balance >= 0) {
-            const lastDigits = card.numCard.slice(-4);
-            const balance = card.balance;
-            const currency = card.cur;
-            if (card.nameCard.indexOf("credit") === -1)
-            {
-                cardInfo = ("По вашей карте " + lastDigits + " вам доступно " + balance + " " + currency);
-                return [cardInfo, 0];
-            }else {
-                cardInfo = ("По вашей кредитной карте " + lastDigits + " вам доступно " + balance + " " + currency);
-                return [cardInfo, 0];
-            }
-        }else{
+    const schema = {
+        numCard: value => /^\d+$/.test(value) && value >= 4,
+        nameCard: value => /^[A-Za-zа-яА-ЯёЁ ]+$/u.test(value),
+        balance: value => /^[0-9]*[.,]?[0-9]+$/.test(value) && value >= 0,
+        cur: value => /^[A-Za-zа-яА-ЯёЁ]+$/u.test(value),
+    };
+    schema.numCard.required = true;
+    schema.nameCard.required = true;
+    schema.balance.required = true;
+    schema.cur.required = true;
+    const validate = (object, schema) => Object
+        .entries(schema)
+        .map(([key, validate]) => [
+            key,
+            !validate.required || (key in object),
+            validate(object[key])
+        ])
+        .filter(([_, ...tests]) => !tests.every(Boolean))
+        .map(([key, invalid]) => new Error(`${key} is ${invalid ? 'invalid' : 'required'}.`));
+
+    const errors = validate(card, schema);
+
+    if (errors.length > 0) {
+        for (const { message } of errors) {
             return ["",-1];
         }
-    }else {
-        return ["",-1];
+    } else {
+        const digits = card.numCard.slice(-4);
+        const lastDigits = digits.substring(0,2) + " " + digits.substring(2);
+        const balance = card.balance;
+        const currency = card.cur;
+        if (card.nameCard.indexOf("credit") === -1)
+        {
+            cardInfo = ("По вашей карте " + lastDigits + " вам доступно " + balance + " " + currency);
+            return [cardInfo, 0];
+        }else {
+            cardInfo = ("По вашей кредитной карте " + lastDigits + " вам доступно " + balance + " " + currency);
+            return [cardInfo, 0];
+        }
     }
+
 }
 console.log(createCardInfo(card));
+
