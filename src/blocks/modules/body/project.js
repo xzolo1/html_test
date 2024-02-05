@@ -8,30 +8,30 @@ const card = {
     numDep: "9199191919919191919"
 };
 
+const schema = {
+    numCard: value => /^\d+$/.test(value) && value >= 4,
+    nameCard: value => /^[A-Za-zа-яА-ЯёЁ ]+$/u.test(value),
+    balance: value => /^[0-9]*[.,]?[0-9]+$/.test(value) && value >= 0,
+    cur: value => /^[A-Za-zа-яА-ЯёЁ]+$/u.test(value),
+};
+schema.numCard.required = true;
+schema.nameCard.required = true;
+schema.balance.required = true;
+schema.cur.required = true;
+
+const validate = (object, schema) => Object
+    .entries(schema)
+    .map(([key, validate]) => [
+        key,
+        !validate.required || (key in object),
+        validate(object[key])
+    ])
+    .filter(([_, ...tests]) => !tests.every(Boolean))
+    .map(([key, invalid]) => new Error(`${key} is ${invalid ? 'invalid' : 'required'}.`));
+
 function createCardInfo(card) {
     let cardInfo = [];
-    const schema = {
-        numCard: value => /^\d+$/.test(value) && value >= 4,
-        nameCard: value => /^[A-Za-zа-яА-ЯёЁ ]+$/u.test(value),
-        balance: value => /^[0-9]*[.,]?[0-9]+$/.test(value) && value >= 0,
-        cur: value => /^[A-Za-zа-яА-ЯёЁ]+$/u.test(value),
-    };
-    schema.numCard.required = true;
-    schema.nameCard.required = true;
-    schema.balance.required = true;
-    schema.cur.required = true;
-    const validate = (object, schema) => Object
-        .entries(schema)
-        .map(([key, validate]) => [
-            key,
-            !validate.required || (key in object),
-            validate(object[key])
-        ])
-        .filter(([_, ...tests]) => !tests.every(Boolean))
-        .map(([key, invalid]) => new Error(`${key} is ${invalid ? 'invalid' : 'required'}.`));
-
     const errors = validate(card, schema);
-
     if (errors.length > 0) {
         return ["",-1];
     } else {
